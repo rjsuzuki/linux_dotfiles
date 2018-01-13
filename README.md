@@ -7,20 +7,20 @@ This collection will only have the most important files to allow the user to mak
 
 # Installation
 With a brand new installation of Linux
-'''bash
+```bash
 something goes here
-'''
+```
 
 # Git Clone
-'''git
+```git
 git clone https://github.com/rjsuzuki/dotfiles.git ~/dotfiles
 source ~/dotfiles/install.sh
-'''
+```
 
 # Remotely install using curl
-'''bash
+```bash
 bash -c " curl -fsSL https://raw.github.com/rjsuzuki/dotfiles/master/remote-install.sh "
-'''
+```
 
 # dotfile commands
 
