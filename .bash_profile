@@ -9,7 +9,7 @@ alias b="cd .."
 alias dt="cd ~/Desktop"
 
 
-for DOTFILE in 'find /home/zuk0/projects/.dotfiles'
+for DOTFILE in 'find /home/zuk0/projects/dotfiles'
 do
     [ -f "$DOTFILE" ] && source "$DOTFILE"
 done
