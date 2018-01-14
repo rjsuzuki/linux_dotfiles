@@ -1,0 +1,11 @@
+# Commands that are too complex for an alias or too small for a standalone script go here
+
+# Create a new directory and open it
+function mk() {
+    mkdir -p "$@" && cd "$@"
+}
+
+# Open man page as PDF
+function manpdf() {
+    man -t "${1}" | open -f -a /Applications/Preview.app/
+}
