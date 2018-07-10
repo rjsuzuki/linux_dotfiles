@@ -30,15 +30,40 @@ ln -sf "$DOTFILES_DIR/zsh/.zsh_aliases" ~
 ln -sf "$DOTFILES_DIR/bash/.bash_profile" ~ 
 ln -sf "$DOTFILES_DIR/bash/.bashrc" ~
 
+#--------------------------------------------
+# Check if wget/curl is installed
+#--------------------------------------------
+
+sudo apt install curl
+
 # ------------------------------------------- 
 # Package managers & packages
 # -------------------------------------------
 
+echo "***************************************"
 echo "Installing NPM..."
- . "$DOTFILES_DIR/install/npm.sh"
+echo "***************************************"
+sudo apt-get install node
+sudo apt-get install npm
+sudo npm install npm@latest -g
+
+echo "***************************************"
 echo "Installing ohmyzsh..."
- . "$DOTFILES_DIR/install/oh-my-zsh.sh"
+echo "***************************************"
+. "$DOTFILES_DIR/install/oh-my-zsh.sh"
+
+echo "***************************************"
 echo "Installing ruby..."
- . "$DOTFILES_DIR/install/ruby.sh"
+echo "***************************************"
+sudo apt-get install ruby-full
+
+echo "***************************************"
 echo "Installing gem..."
+echo "***************************************"
  . "$DOTFILES_DIR/install/gem.sh"
+
+
+echo "***************************************"
+echo "Checking for updates"
+sudo apt-get update
+sudp apt-get upgrade

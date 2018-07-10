@@ -4,7 +4,7 @@ Here's a very minimalist dotfiles for learning and inspiration.
 # Installation
 With a brand new installation of Linux
 ```bash
-A) Use 'git clone' or B) Remotely install 
+A) Use 'git clone'
 ```
 
 # Git Clone
