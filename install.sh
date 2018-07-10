@@ -1,52 +1,44 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
 # -------------------------------------------
-# get current directory and run from anywhere
+# get current directory
 # -------------------------------------------
-export DOTFILES_DIR DOTFILES_CACHE DOTFILES_EXTRA_DIR
+
+export DOTFILES_DIR
 DOTFILES_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-DOTFILES_CACHE="$DOTFILES_DIR/.cache.sh"
-DOTFILES_EXTRA_DIR="$HOME/.extra"
 
-# -------------------------------------------
-# Make utilities available
-# -------------------------------------------
+#--------------------------------------------
+# copy system's dotfiles and store in backup folder
+#--------------------------------------------
 
-PATH="$DOTFILES_DIR/bin:$PATH"
-
-# -------------------------------------------
-# Update dotfiles first
-# -------------------------------------------
-
-if is-executable git -a -d "$DOTFILES_DIR/.git"; then git -- work-tree="$DOTFILES_DIR" --git-dir="$DOTFILES_DIR/.git" pull origin master; 	
-fi
+echo "Backing up your system's dotfiles..."
+BACKUP_DIR="$HOME/backup_old_dotfiles"
+mkdir $BACKUP_DIR
+mv "~/.bashrc" $BACKUP_DIR
+mv "~/.bash_profile" $BACKUP_DIR
 
 # -------------------------------------------
 #symlinks
 # -------------------------------------------
- ln -sfv "$DOTFILES_DIR/runcom/.bash_profile" ~
- ln -sfv "$DOTFILES_DIR/runcom/.inputrc" ~
- ln -sfv "$DOTFILES_DIR/runcom/.gemrc" ~
- ln -sfv "$DOTFILES_DIR/git/.gitconfig" ~
- ln -sfv "$DOTFILES_DIR/git/.gitignore_global" ~
+
+echo "Creating symlinks..."
+ln -sf "$DOTFILES_DIR/git/.gitcongig" ~
+ln -sf "$DOTFILES_DIR/git/.gitignore_global" ~
+ln -sf "$DOTFILES_DIR/zsh/.zshrc" ~
+ln -sf "$DOTFILES_DIR/zsh/.zsh_exports" ~
+ln -sf "$DOTFILES_DIR/zsh/.zsh_aliases" ~
+ln -sf "$DOTFILES_DIR/bash/.bash_profile" ~ 
+ln -sf "$DOTFILES_DIR/bash/.bashrc" ~
 
 # ------------------------------------------- 
 # Package managers & packages
 # -------------------------------------------
- . "$DOTFILES_DIR/install/brew.sh"
+
+echo "Installing NPM..."
  . "$DOTFILES_DIR/install/npm.sh"
- . "$DOTFILES_DIR/install/bash.sh"
- . "$DOTFILES_DIR/install/brew-cask.sh"
+echo "Installing ohmyzsh..."
+ . "$DOTFILES_DIR/install/oh-my-zsh.sh"
+echo "Installing ruby..."
+ . "$DOTFILES_DIR/install/ruby.sh"
+echo "Installing gem..."
  . "$DOTFILES_DIR/install/gem.sh"
-
-# -------------------------------------------
-# Run tests
-# -------------------------------------------
- if is-executable bats; then bats test/*.bats; else echo "Skipped: tests (missing: bats)"; fi
-
-# -------------------------------------------
-# Install extra stuff
-# -------------------------------------------
- if [ -d "$DOTFILES_EXTRA_DIR" -a -f "$DOTFILES_EXTRA_DIR/install.sh" ]; then
-	   . "$DOTFILES_EXTRA_DIR/install.sh"
-   fi

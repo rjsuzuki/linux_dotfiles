@@ -105,8 +105,8 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 # ~/.bash_aliases, instead of adding them here directly.
 # See /usr/share/doc/bash-doc/examples in the bash-doc package.
 
-if [ -f ~/.bash_aliases ]; then
-    . ~/.bash_aliases
+if [ -f ~/.aliases ]; then
+    . ~/.aliases
 fi
 
 # enable programmable completion features (you don't need to enable
@@ -130,5 +130,4 @@ fi
 ANDROID_STUDIO_HOME=/opt/android-studio/
 export ANDROID_STUDIO_HOME
 export PATH=$PATH:ANDROID_STUDIO_HOME/bin
-
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
