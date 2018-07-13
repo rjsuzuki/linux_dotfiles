@@ -25,6 +25,14 @@ alias la="ls -laF ${colorflag}"
 alias lsd="ls -lF ${co#lorflag} | grep --color=never '^d'"
 alias ls="command ls ${colorflag}"
 
+alias b="cd .."
+alias bb="cd ../.."
+alias bbb="cd ../../.."
+
+alias ga="git add -A"
+alias gc="git commit -m"
+alias gp="git push"
+
 # IP addresses
 alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
 alias ipl="hostname -I"

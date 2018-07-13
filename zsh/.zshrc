@@ -4,7 +4,7 @@ export PATH=$HOME/bin:/usr/local/bin:$PATH
 # Path to the oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 
-# ZSH theme to display.
+# ZSH theme to display. "agnoster" is famous theme.	
 ZSH_THEME="spaceship"
 
 # Enable command auto-correction.
