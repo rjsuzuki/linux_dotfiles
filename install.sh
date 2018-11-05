@@ -34,7 +34,7 @@ ln -sf "$DOTFILES_DIR/bash/.bashrc" ~
 # Check if wget/curl is installed
 #--------------------------------------------
 
-sudo apt install curl
+sudo apt install curl -y
 
 # ------------------------------------------- 
 # Package managers & packages
@@ -43,9 +43,9 @@ sudo apt install curl
 echo "***************************************"
 echo "Installing NPM..."
 echo "***************************************"
-sudo apt-get install node
-sudo apt-get install npm
-sudo npm install npm@latest -g
+sudo apt-get install node -y 
+sudo apt-get install npm -y
+sudo npm install npm@latest -gy
 
 echo "***************************************"
 echo "Installing ohmyzsh..."
@@ -62,6 +62,32 @@ echo "Installing gem..."
 echo "***************************************"
  . "$DOTFILES_DIR/install/gem.sh"
 
+echo "***************************************"
+echo "Installing Java JDK..."
+echo "***************************************"
+sudo apt-get install -y software-properties-common
+sudo add-apt repository ppa:webupteam/java
+sudo apt-get install oracle-java8-installer -y
+sudo apt-get install oracle-java8-set-default -y
+
+# must set JAVA_HOME environment variable to location of JDK
+echo "***************************************"
+echo "Installing Create React and React Native..."
+echo "***************************************"
+sudo apt-get install create-react-app
+sudo apt-get install create-react-native-app
+
+echo "***************************************"
+echo "Installing NPM Packages..."
+echo "***************************************"
+npm install -g sass
+npm install -g mocha
+
+echo "***************************************"
+echo "Installing VIM and Plugins..."
+echo "***************************************"
+sudo apt-get install vim -y
+git clone https://github.com/scrooloose/nerdtree.git ~/.vim/bundle/nerdtree
 
 echo "***************************************"
 echo "Checking for updates"

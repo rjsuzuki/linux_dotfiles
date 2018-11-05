@@ -131,3 +131,8 @@ ANDROID_STUDIO_HOME=/opt/android-studio/
 export ANDROID_STUDIO_HOME
 export PATH=$PATH:ANDROID_STUDIO_HOME/bin
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+JAVA_HOME=/usr/lib/jvm/default-java/bin
+export JAVA_HOME
+PATH=$PATH:$JAVA_HOME
+export PATH
+
