@@ -20,14 +20,16 @@ mv "~/.bash_profile" $BACKUP_DIR
 echo "***************************************"
 echo "Installing VIM and Plugins..."
 echo "***************************************"
-sudo apt-get install vim -y
+sudo apt install vim -y
+git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+vim +PluginInstall +qall
 
 # -------------------------------------------
 #symlinks
 # -------------------------------------------
 
 echo "Creating symlinks..."
-ln -sf "$DOTFILES_DIR/git/.gitcongig" ~
+ln -sf "$DOTFILES_DIR/git/.gitconfig" ~
 ln -sf "$DOTFILES_DIR/git/.gitignore_global" ~
 ln -sf "$DOTFILES_DIR/zsh/.zshrc" ~
 ln -sf "$DOTFILES_DIR/zsh/.zsh_exports" ~
@@ -56,7 +58,7 @@ sudo npm install npm@latest -gy
 echo "***************************************"
 echo "Installing ohmyzsh..."
 echo "***************************************"
-. "$DOTFILES_DIR/install/oh-my-zsh.sh"
+ . "$DOTFILES_DIR/install/oh-my-zsh.sh"
 
 echo "***************************************"
 echo "Installing ruby..."
@@ -66,7 +68,7 @@ sudo apt-get install ruby-full
 echo "***************************************"
 echo "Installing gem..."
 echo "***************************************"
-. "$DOTFILES_DIR/install/gem.sh"
+ . "$DOTFILES_DIR/install/gem.sh"
 
 echo "***************************************"
 echo "Installing Java JDK..."
@@ -80,8 +82,8 @@ sudo apt-get install oracle-java8-set-default -y
 echo "***************************************"
 echo "Installing Create React and React Native..."
 echo "***************************************"
-sudo apt-get install create-react-app
-sudo apt-get install create-react-native-app
+sudo npm i -g create-react-app
+sudo npm i -g create-react-native-app
 
 echo "***************************************"
 echo "Installing NPM Packages..."
