@@ -29,6 +29,7 @@ ln -sf "$DOTFILES_DIR/zsh/.zsh_exports" ~
 ln -sf "$DOTFILES_DIR/zsh/.zsh_aliases" ~
 ln -sf "$DOTFILES_DIR/bash/.bash_profile" ~ 
 ln -sf "$DOTFILES_DIR/bash/.bashrc" ~
+ln -sf "$DOTFILES_DIR/vim/.vimrc" ~
 
 #--------------------------------------------
 # Check if wget/curl is installed
@@ -60,7 +61,7 @@ sudo apt-get install ruby-full
 echo "***************************************"
 echo "Installing gem..."
 echo "***************************************"
- . "$DOTFILES_DIR/install/gem.sh"
+. "$DOTFILES_DIR/install/gem.sh"
 
 echo "***************************************"
 echo "Installing Java JDK..."
