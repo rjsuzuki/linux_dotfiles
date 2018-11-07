@@ -46,5 +46,8 @@ filetype plugin indent on    " required
 
 set autoindent
 set tabstop=4
+set softtabstop=4
+set shiftwidth=4
+set expandtab
 set number
 syntax on
