@@ -17,6 +17,11 @@ mkdir $BACKUP_DIR
 mv "~/.bashrc" $BACKUP_DIR
 mv "~/.bash_profile" $BACKUP_DIR
 
+echo "***************************************"
+echo "Installing VIM and Plugins..."
+echo "***************************************"
+sudo apt-get install vim -y
+
 # -------------------------------------------
 #symlinks
 # -------------------------------------------
@@ -67,7 +72,7 @@ echo "***************************************"
 echo "Installing Java JDK..."
 echo "***************************************"
 sudo apt-get install -y software-properties-common
-sudo add-apt repository ppa:webupteam/java
+sudo add-apt-repository ppa:webupteam/java
 sudo apt-get install oracle-java8-installer -y
 sudo apt-get install oracle-java8-set-default -y
 
@@ -81,16 +86,11 @@ sudo apt-get install create-react-native-app
 echo "***************************************"
 echo "Installing NPM Packages..."
 echo "***************************************"
-npm install -g sass
-npm install -g mocha
-
-echo "***************************************"
-echo "Installing VIM and Plugins..."
-echo "***************************************"
-sudo apt-get install vim -y
-git clone https://github.com/scrooloose/nerdtree.git ~/.vim/bundle/nerdtree
+sudo npm install -g sass
+sudo npm install -g mocha
 
 echo "***************************************"
 echo "Checking for updates"
+echo "***************************************"
 sudo apt-get update
-sudp apt-get upgrade
+sudo apt-get upgrade
