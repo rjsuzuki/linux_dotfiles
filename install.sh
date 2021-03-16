@@ -7,20 +7,54 @@
 export DOTFILES_DIR
 DOTFILES_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
+#****************************************
+# Switches - edit these to install or not
+#****************************************
+
+snap=0 #snapcraft.io
+
+back_up=0
+symlinks=1
+vim=0
+zsh=0
+android=0
+npm=0
+ruby=0
+java=0
+
+
+#****************************************
+# Check if snap is installed and/or logged in
+#****************************************
+if [ $snap == 1 ]; then
+  snap whoami
+  result=$?
+  if[ $result -ne 0 ]; then
+    sudo apt update
+    sudo apt install snapd
+  fi
+  snap login
+fi
 #--------------------------------------------
 # copy system's dotfiles and store in backup folder
 #--------------------------------------------
-
-echo "Backing up your system's dotfiles..."
-BACKUP_DIR="$HOME/backup_old_dotfiles"
-mkdir $BACKUP_DIR
-mv "~/.bashrc" $BACKUP_DIR
-mv "~/.bash_profile" $BACKUP_DIR
+if [ $back_up == 1 ]; then
+  echo "Backing up your system's dotfiles..."
+  BACKUP_DIR="$HOME/backup_old_dotfiles"
+  mkdir $BACKUP_DIR
+  mv "~/.bashrc" $BACKUP_DIR
+  mv "~/.bash_profile" $BACKUP_DIR
+fi
 
 echo "***************************************"
 echo "Installing VIM and Plugins..."
 echo "***************************************"
-sudo apt install vim -y
+if [ $snap == 1 ]; then
+  sudo snap install vim-editor --beta
+else
+  sudo apt install vim -y
+fi
+
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 vim +PluginInstall +qall
 
@@ -42,7 +76,11 @@ ln -sf "$DOTFILES_DIR/vim/.vimrc" ~
 # Check if wget/curl is installed
 #--------------------------------------------
 
-sudo apt install curl -y
+if [ $snap == 1 ]; then
+  sudo snap install curl-ijohnson --edge
+else
+  sudo apt install curl -y
+fi
 
 # ------------------------------------------- 
 # Package managers & packages
@@ -51,9 +89,15 @@ sudo apt install curl -y
 echo "***************************************"
 echo "Installing NPM..."
 echo "***************************************"
-sudo apt-get install node -y 
-sudo apt-get install npm -y
-sudo npm install npm@latest -gy
+if [ $snap == 1 ]; then
+  sudo snap install node --classic
+else
+  sudo apt-get install node -y 
+  sudo apt-get install npm -y
+  sudo npm install npm@latest -gy
+  sudo npm install -g sass
+  sudo npm install -g mocha
+fi
 
 echo "***************************************"
 echo "Installing ohmyzsh..."
@@ -77,19 +121,29 @@ sudo apt-get install -y software-properties-common
 sudo add-apt-repository ppa:webupteam/java
 sudo apt-get install oracle-java8-installer -y
 sudo apt-get install oracle-java8-set-default -y
-
 # must set JAVA_HOME environment variable to location of JDK
+ 
 echo "***************************************"
-echo "Installing Create React and React Native..."
+echo "Installing Atom text editor..."
 echo "***************************************"
-sudo npm i -g create-react-app
-sudo npm i -g create-react-native-app
+if [ $snap == 1 ]; then
+  sudo snap install atom --classic
+then
+  sudo add-apt-repository ppa:webupd8team/atom
+  sudo apt-get update
+  sudo apt-get install atom
+  #https://atom.io/download/deb
+fi
+
 
 echo "***************************************"
-echo "Installing NPM Packages..."
+echo "Installing Git..."
 echo "***************************************"
-sudo npm install -g sass
-sudo npm install -g mocha
+if [ $snap == 1 ]; then
+  sudo snap install git-ubuntu --classic
+else
+  sudo apt-get install -y git
+fi
 
 echo "***************************************"
 echo "Checking for updates"
