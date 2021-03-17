@@ -49,14 +49,16 @@ fi
 echo "***************************************"
 echo "Installing VIM and Plugins..."
 echo "***************************************"
-if [ $snap == 1 ]; then
-  sudo snap install vim-editor --beta
-else
-  sudo apt install vim -y
-fi
+if [ $vim == 1 ]; then 
+  if [ $snap == 1 ]; then
+    sudo snap install vim-editor --beta
+  else
+    sudo apt install vim -y
+  fi
 
-git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-vim +PluginInstall +qall
+  git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+  vim +PluginInstall +qall
+fi
 
 # -------------------------------------------
 #symlinks
@@ -89,14 +91,16 @@ fi
 echo "***************************************"
 echo "Installing NPM..."
 echo "***************************************"
-if [ $snap == 1 ]; then
-  sudo snap install node --classic
-else
-  sudo apt-get install node -y 
-  sudo apt-get install npm -y
-  sudo npm install npm@latest -gy
-  sudo npm install -g sass
-  sudo npm install -g mocha
+if [ $npm == 1 ]; then
+  if [ $snap == 1 ]; then
+    sudo snap install node --classic
+  else
+    sudo apt-get install node -y 
+    sudo apt-get install npm -y
+    sudo npm install npm@latest -gy
+    sudo npm install -g sass
+    sudo npm install -g mocha
+  fi
 fi
 
 echo "***************************************"
@@ -126,19 +130,22 @@ sudo apt-get install oracle-java8-set-default -y
 echo "***************************************"
 echo "Installing Atom text editor..."
 echo "***************************************"
-if [ $snap == 1 ]; then
-  sudo snap install atom --classic
-then
-  sudo add-apt-repository ppa:webupd8team/atom
-  sudo apt-get update
-  sudo apt-get install atom
-  #https://atom.io/download/deb
-fi
 
+if [ $atom == 1 ]; then 
+  if [ $snap == 1 ]; then
+    sudo snap install atom --classic
+  then
+    sudo add-apt-repository ppa:webupd8team/atom
+    sudo apt-get update
+    sudo apt-get install atom
+    #https://atom.io/download/deb
+  fi
+fi
 
 echo "***************************************"
 echo "Installing Git..."
 echo "***************************************"
+
 if [ $snap == 1 ]; then
   sudo snap install git-ubuntu --classic
 else
