@@ -29,7 +29,7 @@ java=1
 if [ $snap == 1 ]; then
   snap whoami
   result=$?
-  if[ $result -ne 0 ]; then
+  if[ $result == 0 ]; then
     sudo apt update
     sudo apt install snapd
   fi
