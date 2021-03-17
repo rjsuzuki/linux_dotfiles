@@ -11,16 +11,16 @@ DOTFILES_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 # Switches - edit these to install or not
 #****************************************
 
-snap=0 #snapcraft.io
+snap=1 #snapcraft.io
 
-back_up=0
+back_up=1
 symlinks=1
-vim=0
-zsh=0
-android=0
-npm=0
-ruby=0
-java=0
+vim=1
+zsh=1
+android=1
+npm=1
+ruby=1
+java=1
 
 
 #****************************************
@@ -106,27 +106,36 @@ fi
 echo "***************************************"
 echo "Installing ohmyzsh..."
 echo "***************************************"
- . "$DOTFILES_DIR/install/oh-my-zsh.sh"
+
+if [ $zsh= 1 ]; then 
+  . "$DOTFILES_DIR/install/oh-my-zsh.sh"
+fi
 
 echo "***************************************"
 echo "Installing ruby..."
 echo "***************************************"
-sudo apt-get install ruby-full
+if [ $ruby == 1 ]; then 
+  if [ $snap == 1 ]; then
+    sudo snap install ruby --classic
+  then
+    sudo apt-get install ruby-full
+    URL="https://rubygems.org/rubygems/rubygems-2.7.7.tgz"
+    curl -L $URL | tar -xvzf rubygems-2.7.7.tgz 
+  fi
+fi
 
-echo "***************************************"
-echo "Installing gem..."
-echo "***************************************"
- . "$DOTFILES_DIR/install/gem.sh"
 
 echo "***************************************"
 echo "Installing Java JDK..."
 echo "***************************************"
+if [ $java == 1 ]; then 
 sudo apt-get install -y software-properties-common
 sudo add-apt-repository ppa:webupteam/java
 sudo apt-get install oracle-java8-installer -y
 sudo apt-get install oracle-java8-set-default -y
 # must set JAVA_HOME environment variable to location of JDK
- 
+fi
+
 echo "***************************************"
 echo "Installing Atom text editor..."
 echo "***************************************"
