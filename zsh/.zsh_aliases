@@ -25,10 +25,6 @@ alias la="ls -laF ${colorflag}"
 alias lsd="ls -lF ${co#lorflag} | grep --color=never '^d'"
 alias ls="command ls ${colorflag}"
 
-alias b="cd .."
-alias bb="cd ../.."
-alias bbb="cd ../../.."
-
 alias ga="git add -A"
 alias gc="git commit -m"
 alias gp="git push"
@@ -46,3 +42,10 @@ alias gobash="chsh -s /bin/bash"
 
 # For Atom.io
 alias atom="/usr/bin/atom"
+
+alias adb="$ADB"
+
+alias android="sh $ANDROID/bin/studio.sh"
+
+# Print custom commands for bash and zsh
+alias help="sh $DOTFILES_DIR/help/help.sh"
