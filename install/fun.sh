@@ -6,7 +6,7 @@ if [ $1 == 1 ]; then
   echo "-------------------------------------------"
   echo "Installing Spotify..."
   echo "-------------------------------------------"
-  snap install spotify
+  sudo snap install spotify
   echo "Spotify done!"
 
   echo "-------------------------------------------"

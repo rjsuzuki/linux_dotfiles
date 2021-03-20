@@ -54,7 +54,7 @@ echo "Installing ruby..."
 echo "-------------------------------------------"
 if [ $1 == 1 ]; then
   sudo snap install ruby --classic
-then
+else
   sudo apt install ruby-full
   URL="https://rubygems.org/rubygems/rubygems-2.7.7.tgz"
   curl -L $URL | tar -xvzf rubygems-2.7.7.tgz
@@ -89,23 +89,24 @@ echo "-------------------------------------------"
 # Installs Oh My Zsh - open source project for managing your Zsh configuration.
 # Comes bundled with a ton of helpful functions, helpers, plugins, theese, etc.
 
-npm install -g spaceship-prompt
+sudo npm install -g spaceship-prompt -y
 
 # First install zsh
-sudo apt install zsh
+sudo apt install zsh -y
 
 # Then install ohmyzsh
 sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
 # Then install spaceship-prompt (theme)
-
-git clone https://github.com/denysdovhan/spaceship-prompt.git "$HOME/.oh-my-zsh/themes/spaceship-prompt" --depth=1
+git clone https://github.com/denysdovhan/spaceship-prompt.git "$ZSH_CUSTOM/themes/spaceship-prompt" --depth=1
+#git clone https://github.com/denysdovhan/spaceship-prompt.git "$HOME/.oh-my-zsh/themes/spaceship-prompt" --depth=1
 
 # Powerline font (icons)
-sudo apt install fonts-powerline
+sudo apt install fonts-powerline -y
 
 # Create symlink for spaceship-prompt
-ln -s "$HOME/.oh-my-zsh/themes/spaceship-prompt/spaceship.zsh-theme" "$HOME/.oh-my-zsh/themes/spaceship.zsh-theme"
+ln -s "$ZSH_CUSTOM/themes/spaceship-prompt/spaceship.zsh-theme" "$ZSH_CUSTOM/themes/spaceship.zsh-theme"
+#ln -s "$HOME/.oh-my-zsh/themes/spaceship-prompt/spaceship.zsh-theme" "$HOME/.oh-my-zsh/themes/spaceship.zsh-theme"
 
 source ~/.zshrc
 

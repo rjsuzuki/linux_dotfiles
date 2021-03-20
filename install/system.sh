@@ -8,7 +8,7 @@ figlet -c SysTools
 echo "-------------------------------------------"
 echo "Installing virtualbox"
 echo "-------------------------------------------"
-sudo apt install virtualbox
+sudo apt install virtualbox -y
 echo "virtualbox done!"
 
 if [ $1 == 1 ]; then
