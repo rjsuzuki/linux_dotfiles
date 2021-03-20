@@ -12,7 +12,7 @@ sudo apt update -y
 # -------------------------------------------
 
 # For testing
-help=1
+test=1
 
 # Dev tools Switch
 dev=0
@@ -89,8 +89,8 @@ echo "symlinks done!"
 #--------------------------------------------
 # Help/Test
 #--------------------------------------------
-if [ $help == 1 ]; then
-  . "$DOTFILES_DIR/install/help.sh" 1
+if [ $test == 1 ]; then
+  . "$DOTFILES_DIR/install/test.sh" 1
 fi
 
 #--------------------------------------------
