@@ -17,4 +17,4 @@ alias gp="git push"
 alias gozsh="chsh -s /bin/zsh"
 
 # Print custom commands for bash and zsh
-alias help="sh $DOTFILES_DIR/help/help.sh"
+alias help="sh $HOME/help.sh"

@@ -15,6 +15,7 @@ export SSH_KEY_PATH="~/.ssh/rsa_id"
 export LC_ALL="en_US.UTF-8"
 export LANG="en_US"
 
-export ANDROID="$HOME/Apps/android-studio"
-export ANDROID_TOOLS="$HOME/Android/Sdk"
-export PATH=$PATH:"$ANDROID_TOOLS/platform-tools/adb"
+#export ANDROID=$HOME/Apps/android-studio
+#export ANDROID_TOOLS=$HOME/Android/Sdk
+#export PATH=$PATH:ANDROID_TOOLS/platform-tools/adb
+#export PATH=$PATH:ANDROID_HOME/bin

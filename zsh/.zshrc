@@ -4,7 +4,7 @@ export PATH=$HOME/bin:/usr/local/bin:$PATH
 # Path to the oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 
-# ZSH theme to display. "agnoster" is famous theme.	
+# ZSH theme to display. "agnoster" is famous theme.
 ZSH_THEME="spaceship"
 
 # Enable command auto-correction.
@@ -27,6 +27,6 @@ SPACESHIP_PROMPT_ORDER=( time user host dir git )
 SPACESHIP_DOCKER_SHOW=false
 
 # Sourcing oh-my-zsh and other shell helpers
-source $ZSH/oh-my-zsh.sh
+source $ZSH/oh-my-zsh.sh #todo
 source $HOME/.zsh_exports
 source $HOME/.zsh_aliases

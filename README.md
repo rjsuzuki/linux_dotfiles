@@ -45,6 +45,9 @@ source ~/dotfiles/install.sh
 ```bash
 bash -c " curl -fsSL https://raw.github.com/rjsuzuki/dotfiles/master/remote-install.sh "
 ```
+## If you need to start over
+
+- make sure to delete the `$HOME/.oh-my-zsh` directory before trying again.
 
 ## Credits
 🙏 Cheers to the [dotfile community](https:///dotfiles.github.io).
