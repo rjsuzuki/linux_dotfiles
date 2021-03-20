@@ -2,7 +2,7 @@
 
 figlet -c FunStuff
 
-if [ $snap == 1 ]; then
+if [ $1 == 1 ]; then
   echo "-------------------------------------------"
   echo "Installing Spotify..."
   echo "-------------------------------------------"
