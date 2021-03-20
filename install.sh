@@ -15,19 +15,19 @@ sudo apt update -y
 test=1
 
 # Dev tools Switch
-dev=0
+dev=1
 
 # Fun Stuff Switch
-fun=0
+fun=1
 
 # Security Tools Switch
 kali=0
 
 # System Tools Switch
-system=0
+system=1
 
 # Terminal Tools Switch
-terminal=0
+terminal=1
 
 # -------------------------------------------
 # get current directory
@@ -68,23 +68,6 @@ mkdir $BACKUP_DIR
 mv "~/.bashrc" $BACKUP_DIR
 mv "~/.bash_profile" $BACKUP_DIR
 echo "back ups done!"
-
-# -------------------------------------------
-#symlinks
-# -------------------------------------------
-echo "-------------------------------------------"
-echo "Creating symlinks..."
-echo "-------------------------------------------"
-
-ln -sf "$DOTFILES_DIR/git/.gitconfig" ~
-ln -sf "$DOTFILES_DIR/git/.gitignore_global" ~
-ln -sf "$DOTFILES_DIR/zsh/.zshrc" ~
-ln -sf "$DOTFILES_DIR/zsh/.zsh_exports" ~
-ln -sf "$DOTFILES_DIR/zsh/.zsh_aliases" ~
-ln -sf "$DOTFILES_DIR/bash/.bash_profile" ~
-ln -sf "$DOTFILES_DIR/bash/.bashrc" ~
-ln -sf "$DOTFILES_DIR/vim/.vimrc" ~
-echo "symlinks done!"
 
 #--------------------------------------------
 # Help/Test
@@ -132,6 +115,23 @@ fi
 if [ $terminal == 1 ]; then
   . "$DOTFILES_DIR/install/terminal.sh" 1
 fi
+
+# -------------------------------------------
+#symlinks
+# -------------------------------------------
+echo "-------------------------------------------"
+echo "Creating symlinks..."
+echo "-------------------------------------------"
+
+ln -sf "$DOTFILES_DIR/git/.gitconfig" ~
+ln -sf "$DOTFILES_DIR/git/.gitignore_global" ~
+ln -sf "$DOTFILES_DIR/zsh/.zshrc" ~
+ln -sf "$DOTFILES_DIR/zsh/.zsh_exports" ~
+ln -sf "$DOTFILES_DIR/zsh/.zsh_aliases" ~
+ln -sf "$DOTFILES_DIR/bash/.bash_profile" ~
+ln -sf "$DOTFILES_DIR/bash/.bashrc" ~
+ln -sf "$DOTFILES_DIR/vim/.vimrc" ~
+echo "symlinks done!"
 
 #--------------------------------------------
 # update/upgrade deps
