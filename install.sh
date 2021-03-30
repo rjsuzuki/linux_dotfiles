@@ -27,7 +27,7 @@ kali=0
 system=0
 
 # Terminal Tools Switch
-terminal=0
+terminal=1
 
 # -------------------------------------------
 # get current directory
@@ -79,7 +79,7 @@ echo "-------------------------------------------"
 ln -sf "$DOTFILES_DIR/git/.gitconfig" ~
 ln -sf "$DOTFILES_DIR/git/.gitignore_global" ~
 ln -sf "$DOTFILES_DIR/zsh/.zshrc" ~
-ln -sf "$DOTFILES_DIR/zsh/.zsh_exports" ~
+#ln -sf "$DOTFILES_DIR/zsh/.zsh_exports" ~
 ln -sf "$DOTFILES_DIR/zsh/.zsh_aliases" ~
 ln -sf "$DOTFILES_DIR/bash/.bash_profile" ~
 ln -sf "$DOTFILES_DIR/bash/.bashrc" ~
@@ -101,11 +101,6 @@ cp . "$DOTFILES_DIR/help/help.sh" $HOME
 if [ $test == 1 ]; then
   . "$DOTFILES_DIR/install/test.sh" 1
 fi
-
-#--------------------------------------------
-# oh-my-zsh
-#--------------------------------------------
-. "$DOTFILES_DIR/install/ohmyzsh.sh"
 
 #--------------------------------------------
 # Terminal Stuff
@@ -156,4 +151,8 @@ echo "-------------------------------------------"
 sudo apt update -y
 sudo apt upgrade -y
 
-figlet -c Owari
+
+#--------------------------------------------
+# oh-my-zsh
+#--------------------------------------------
+. "$DOTFILES_DIR/install/ohmyzsh.sh"

@@ -3,9 +3,9 @@
 # Load RVM into a shell session *as a function*
 
 
-for DOTFILE in 'find /home/zuk0/projects/.dotfiles'
+for DOTFILE in 'find $HOME/.dotfiles'
 do
     [ -f "$DOTFILE" ] && source "$DOTFILE"
 done
 
-source ~/.profile
+source ~also, /.profile

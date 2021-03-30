@@ -15,3 +15,4 @@ echo "'...'  = cd ../.."
 echo "'....' = cd ../../.."
 echo "-------------------------------------------"
 echo "'atom [filename]' = Open [filename] with Atom"
+ 

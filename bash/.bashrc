@@ -87,7 +87,7 @@ if [ -x /usr/bin/dircolors ]; then
     alias fgrep='fgrep --color=auto'
     alias egrep='egrep --color=auto'
 fi
-
+if [ -n "$force_color_prompt" ]; then
 # colored GCC warnings and errors
 #export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
@@ -105,8 +105,8 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 # ~/.bash_aliases, instead of adding them here directly.
 # See /usr/share/doc/bash-doc/examples in the bash-doc package.
 
-if [ -f ~/.aliases ]; then
-    . ~/.aliases
+if [ -f ~/.bash_aliases ]; then
+    . ~/.bash_aliases
 fi
 
 # enable programmable completion features (you don't need to enable
@@ -123,19 +123,3 @@ fi
 if [ -x /usr/bin/mint-fortune ]; then
      /usr/bin/mint-fortune
 fi
-
-### MY PERSONAL CHANGES ###
-
-#Android Studio
-ANDROID_TOOLS=$HOME/Android/Sdk/platform-tools
-export ANDROID_TOOLS
-export $ANDROID_TOOLS/adb
-
-ANDROID_HOME=$HOME/Apps/android-studio/
-export ANDROID_HOME
-export PATH=$PATH:ANDROID_HOME/bin
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
-JAVA_HOME=/usr/lib/jvm/default-java/bin
-export JAVA_HOME
-PATH=$PATH:$JAVA_HOME
-export PATH

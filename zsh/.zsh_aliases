@@ -20,6 +20,7 @@ else # macOS `ls`
   colorflag="-G"
   export LSCOLORS='BxBxhxDxfxhxhxhxhxcxcx'
 fi
+
 alias l="ls -lF ${colorflag}"
 alias la="ls -laF ${colorflag}"
 alias lsd="ls -lF ${co#lorflag} | grep --color=never '^d'"
@@ -39,9 +40,6 @@ alias sass='nocorrect sass'
 
 # Switch back to bash
 alias gobash="chsh -s /bin/bash"
-
-# For Atom.io
-alias atom="/usr/bin/atom"
 
 alias android="sh $ANDROID/bin/studio.sh"
 

@@ -24,10 +24,12 @@ echo "atom done!"
 echo "-------------------------------------------"
 echo "Installing Java JDK..."
 echo "-------------------------------------------"
-sudo apt install -y software-properties-common
-sudo add-apt-repository ppa:webupteam/java
-sudo apt install oracle-java8-installer -y
-sudo apt install oracle-java8-set-default -y
+sudo apt install openjdk-8-jdk -y
+
+#sudo apt install -y software-properties-common
+#sudo add-apt-repository ppa:webupteam/java
+#sudo apt install oracle-java8-installer -y
+#sudo apt install oracle-java8-set-default -y
 # must set JAVA_HOME environment variable to location of JDK
 echo "java done!"
 
@@ -56,4 +58,12 @@ if [ $1 == 1 ]; then
   echo "-------------------------------------------"
   sudo snap install slack --classic
   echo "Slack done!"
+fi
+
+if [ $1 == 1 ]; then
+  echo "-------------------------------------------"
+  echo "Installing CircleCI local cli..."
+  echo "-------------------------------------------"
+  sudo snap install circleci
+  echo "circleci done!"
 fi

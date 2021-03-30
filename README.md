@@ -2,6 +2,10 @@
 
 Basic dotfiles setup. Defaults to Snapcraft.io whenever possible.
 
+## IMPORTANT
+
+- review the `path_exports.sh` to ensure the paths will match appropriately to your environment.
+
 ## "What's in the box!?"
 
 - Edit the 'switches' inside the `install.sh` file to turn ON/OFF for installation.
