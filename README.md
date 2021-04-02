@@ -1,9 +1,7 @@
 # rjsuzuki's dotfiles
 
-v2.0.0
-
 Basic dotfiles setup for linux.
-
+- version 2.0.0
 ---
 
 ## 💻 Environment
