@@ -41,8 +41,8 @@ A) Use 'git clone'
 
 ## Git Clone
 ```git
-git clone https://github.com/rjsuzuki/dotfiles.git ~/dotfiles
-source ~/dotfiles/install.sh
+git clone https://github.com/rjsuzuki/dotfiles.git ~/.dotfiles
+source ~/.dotfiles/install.sh
 ```
 
 ## Remotely install using curl

@@ -29,13 +29,13 @@ export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
 echo "-------------------------------------------"
 echo exporting bash paths
 echo "-------------------------------------------"
-export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$DOTFILES_DIR/bin"
+#export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$DOTFILES_DIR/bin"
 
 # Highlight matches in 'grep'
 export GREP_OPTIONS='-color=auto'
 
 # Autocorrect typos in path names with 'cd'
-shopt -s cdspell\
+#shopt -s cdspell\
 
 echo "-------------------------------------------"
 echo exporting zsh paths
