@@ -28,6 +28,5 @@ echo " Setting up zsh..."
 echo "-------------------------------------------"
 
 source $HOME/.dotfiles/zsh/.zshrc
-source $ZSH/oh-my-zsh.sh
 
 figlet -c owari

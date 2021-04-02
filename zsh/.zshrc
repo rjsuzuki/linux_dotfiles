@@ -98,6 +98,6 @@ SPACESHIP_DOCKER_SHOW=false
 # line to your shell rc files (like .bashrc):
 eval `ruby.env`
 
-source $HOME/.zsh_exports
+source $HOME/.zsh_exports # Always source exports first before aliases
 source $HOME/.zsh_aliases
 source $ZSH/oh-my-zsh.sh # This needs to be last in order for oh-my-zsh to be properly loaded

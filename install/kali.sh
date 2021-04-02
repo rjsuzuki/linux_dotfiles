@@ -15,4 +15,7 @@ echo "-------------------------------------------"
 sudo apt install nmon -y
 
 
+# SSH key
+export SSH_KEY_PATH="~/.ssh/rsa_id"
+
 echo "sec-tools done!"
