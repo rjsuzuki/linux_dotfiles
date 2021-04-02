@@ -1,0 +1,9 @@
+
+# assuming android-studio was installed in $HOME/Apps
+
+export ANDROID_STUDIO="$HOME/Apps/android-studio"
+export PATH="$PATH:$ANDROID_STUDIO/bin"
+
+# assuming Android SDK was installed in $HOME/Android
+export ANDROID_SDK="$HOME/Android/Sdk"
+export PATH="$PATH:ANDROID_SDK/platform-tools/adb"

@@ -1,14 +1,35 @@
-# Rjsuzuki's dotfiles
+# rjsuzuki's dotfiles
 
-Basic dotfiles setup. Defaults to Snapcraft.io whenever possible.
+Basic dotfiles setup for linux.
+- version 2.0.0
+---
 
-## IMPORTANT
+## 💻 Environment
 
-- review the `path_exports.sh` to ensure the paths will match appropriately to your environment.
+These dotfiles are opinionated, so please compare the environment settings to yours and modify the files as needed.
 
-## "What's in the box!?"
+- ubuntu_20
+- zsh > bash
+- snapcraft.io > sudo apt
+- vim
+---
+## ⚠️  IMPORTANT
 
-- Edit the 'switches' inside the `install.sh` file to turn ON/OFF for installation.
+1. Go to git folder and modify .gitconfig with your own information.
+2. Review the `.vimrc` file and edit as needed to fit your preferences.
+3. Only source `install.sh` or `configure.sh` files. `install.sh` is for system wide coverage of settings, while `configure.sh` files are for quickly updating specific modules.
+4. Edit the 'binary switches' inside the `install.sh` file to turn ON/OFF the installation of a specific module. accepted values are `0` and `1`.
+5. After installation, you can run the cmd `help` in the terminal to print out a list of the custom aliases that were configured. If you add additional aliases and/or exports, you can update the `help.sh` for your own reference.
+6. I really gave up on the `bash` related files because I like `zsh` so much more. So use bash at your own discretion.
+7. When you need to update a `.zsh` file, simply run
+```bash
+cd $HOME
+source ~/.dotfiles/zsh.configure.zsh
+```
+Successful updates will print out `owari` in the terminal. It means `done` in 🇯🇵.
+---
+## 📦  What's in the box!?
+A non-exhaustive list of dependencies that can be installed.
 
 ### Dev Tools
 1. npm
@@ -17,6 +38,7 @@ Basic dotfiles setup. Defaults to Snapcraft.io whenever possible.
 4. Java 8
 5. Intellij Idea Community Edition
 6. Slack
+6. Android Studio + SDK
 
 ### Fun Stuff
 1. Spotify
@@ -33,25 +55,54 @@ Basic dotfiles setup. Defaults to Snapcraft.io whenever possible.
 3. vim + plugins
 4. zsh
 
-## Installation
-With a brand new installation of Linux
+### Security Tools
+1. nmap
+---
+## ℹ️  Installation
+Preferably with a new installation of Linux
+
+#### quick installation with downloaded zip:
 ```bash
-A) Use 'git clone'
+sudo apt install unzip
+cd $HOME
+mkdir .dotfiles
+unzip dotfiles-master.zip -d $HOME/.dotfiles
+sudo source $HOME/.dotfiles/install.sh
 ```
 
-## Git Clone
-```git
-git clone https://github.com/rjsuzuki/dotfiles.git ~/dotfiles
-source ~/dotfiles/install.sh
-```
-
-## Remotely install using curl
+#### custom installation with downloaded zip:
 ```bash
-bash -c " curl -fsSL https://raw.github.com/rjsuzuki/dotfiles/master/remote-install.sh "
+sudo apt install unzip
+cd $HOME
+mkdir .dotfiles
+unzip dotfiles-master.zip -d $HOME/.dotfiles
 ```
-## If you need to start over
+Modify files as needed then run:
+```bash
+cd $HOME
+sudo source $HOME/.dotfiles/install.sh
+```
 
-- make sure to delete the `$HOME/.oh-my-zsh` directory before trying again.
+#### quick installation with git:
+```bash
+cd $HOME
+git clone https://github.com/rjsuzuki/dotfiles.git ~/.dotfiles
+source ~/.dotfiles/install.sh
+```
+#### custom installation with git:
+```bash
+cd $HOME
+git clone https://github.com/rjsuzuki/dotfiles.git ~/.dotfiles
+```
+Modify files as needed then run:
+```bash
+cd $HOME
+sudo source $HOME/.dotfiles/install.sh
+```
 
-## Credits
+#### If you need to start over
+
+- make sure to uninstall `oh-my-zsh` and/or delete the `$HOME/.oh-my-zsh` directory before trying again.
+---
+### Credits
 🙏 Cheers to the [dotfile community](https:///dotfiles.github.io).
