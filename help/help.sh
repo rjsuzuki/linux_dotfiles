@@ -15,4 +15,6 @@ echo "'...'  = cd ../.."
 echo "'....' = cd ../../.."
 echo "-------------------------------------------"
 echo "'atom [filename]' = Open [filename] with Atom"
- 
+echo "-------------------------------------------"
+echo "'randompw' = Generate a random password"
+echo "'rpw' = Shorthand version to generate a random password"

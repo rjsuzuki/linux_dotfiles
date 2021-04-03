@@ -45,3 +45,7 @@ alias android="sh $ANDROID/bin/studio.sh"
 
 # Print custom commands for bash and zsh
 alias help="sh $HOME/help.sh"
+
+# Random password generator
+randompw="openssl rand -base64 32"
+rpw="openssl rand -base64 32"
