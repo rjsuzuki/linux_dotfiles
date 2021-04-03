@@ -41,7 +41,7 @@ alias sass='nocorrect sass'
 # Switch back to bash
 alias gobash="chsh -s /bin/bash"
 
-alias android="sh $ANDROID/bin/studio.sh"
+alias android="sh $ANDROID_STUDIO/bin/studio.sh"
 
 # Print custom commands for bash and zsh
 alias help="sh $HOME/help.sh"

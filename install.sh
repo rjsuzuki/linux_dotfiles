@@ -79,7 +79,7 @@ echo "-------------------------------------------"
 ln -sf "$DOTFILES_DIR/git/.gitconfig" ~
 ln -sf "$DOTFILES_DIR/git/.gitignore_global" ~
 ln -sf "$DOTFILES_DIR/zsh/.zshrc" ~
-#ln -sf "$DOTFILES_DIR/zsh/.zsh_exports" ~
+ln -sf "$DOTFILES_DIR/zsh/.zsh_exports" ~
 ln -sf "$DOTFILES_DIR/zsh/.zsh_aliases" ~
 ln -sf "$DOTFILES_DIR/bash/.bash_profile" ~
 ln -sf "$DOTFILES_DIR/bash/.bashrc" ~
