@@ -67,3 +67,27 @@ if [ $1 == 1 ]; then
   sudo snap install circleci
   echo "circleci done!"
 fi
+
+echo "-------------------------------------------"
+echo "Installing Gitlab Runner cli for Ubuntu..."
+echo "-------------------------------------------"
+# Replace ${arch} with any of the supported architectures, e.g. amd64, arm, arm64
+# A full list of architectures can be found here #ttps://gitlab-runner-downloads.s3.amazonaws.com/latest/index.html
+# https://docs.gitlab.com/runner/install/bleeding-edge.html#download-any-other-tagged-release
+ #chmod +x gitlab-runner-linux-amd64
+#./gitlab-runner-linux-amd64 run
+# Download the binary for your system
+sudo curl -L --output /usr/local/bin/gitlab-runner https://gitlab-runner-downloads.s3.amazonaws.com/latest/binaries/gitlab-runner-linux-amd64
+
+# Give it permissions to execute
+sudo chmod +x /usr/local/bin/gitlab-runner
+
+# Create a GitLab CI user
+sudo useradd --comment 'GitLab Runner' --create-home gitlab-runner --shell /bin/bash
+
+# Install and run as service
+sudo gitlab-runner install --user=gitlab-runner --working-directory=/home/gitlab-runner
+sudo gitlab-runner start
+
+
+# sudo gitlab-runner register --url https://gitlab.com/ --registration-token $REGISTRATION_TOKEN

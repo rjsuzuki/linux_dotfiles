@@ -47,5 +47,5 @@ alias android="sh $ANDROID_STUDIO/bin/studio.sh"
 alias help="sh $HOME/help.sh"
 
 # Random password generator
-randompw="openssl rand -base64 32"
-rpw="openssl rand -base64 32"
+alias randompw="openssl rand -base64 32"
+alias rpw="openssl rand -base64 32"

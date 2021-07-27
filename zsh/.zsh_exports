@@ -1,9 +1,22 @@
 
 # assuming android-studio was installed in $HOME/Apps
 
+#source ~/.bash_profile
+export PATH="/usr/local/bin:/usr/sbin:/usr/bin:/bin:/sbin:"
+
 export ANDROID_STUDIO="$HOME/Apps/android-studio"
 export PATH="$PATH:$ANDROID_STUDIO/bin"
 
-# assuming Android SDK was installed in $HOME/Android
+# assuming Android SDK installtion dir
 export ANDROID_SDK="$HOME/Android/Sdk"
 export PATH="$PATH:ANDROID_SDK/platform-tools/adb"
+
+export PATH="$PATH:$HOME/Android/android-ndk-r21e"
+export PATH="$PATH:$HOME/Android/gradle/opt/gradle/gradle-6.4.1/bin"
+
+
+export JAVA_HOME="/usr/lib/jvm/java-1.8.0-openjdk-amd64"
+export PATH="$PATH:$JAVA_HOME/bin"
+
+export PATH="$PATH:/snap/bin"
+export PATH="$PATH:$HOME/.gem/bin"

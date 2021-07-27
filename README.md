@@ -24,7 +24,7 @@ These dotfiles are opinionated, so please compare the environment settings to yo
 7. When you need to update a `.zsh` file, simply run
 ```bash
 cd $HOME
-source ~/.dotfiles/zsh.configure.zsh
+source ~/.dotfiles/zsh/configure.sh
 ```
 Successful updates will print out `owari` in the terminal. It means `done` in 🇯🇵.
 ---

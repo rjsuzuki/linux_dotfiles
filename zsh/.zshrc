@@ -1,7 +1,7 @@
 # Setting $PATH
 # If you come from bash you might have to change your $PATH.
 echo "Starting oh-my-zsh..."
-#export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to the oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
