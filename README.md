@@ -2,6 +2,8 @@
 
 Basic dotfiles setup for linux.
 - version 2.0.0
+
+for osx: [go here](https://github.com/rjsuzuki/osx_dotfiles)
 ---
 
 ## 💻 Environment
@@ -15,7 +17,7 @@ These dotfiles are opinionated, so please compare the environment settings to yo
 ---
 ## ⚠️  IMPORTANT
 
-1. Go to git folder and modify .gitconfig with your own information.
+1. Go to git folder and modify `.gitconfig` with your own information.
 2. Review the `.vimrc` file and edit as needed to fit your preferences.
 3. Only source `install.sh` or `configure.sh` files. `install.sh` is for system wide coverage of settings, while `configure.sh` files are for quickly updating specific modules.
 4. Edit the 'binary switches' inside the `install.sh` file to turn ON/OFF the installation of a specific module. accepted values are `0` and `1`.
@@ -86,13 +88,13 @@ sudo source $HOME/.dotfiles/install.sh
 #### quick installation with git:
 ```bash
 cd $HOME
-git clone https://github.com/rjsuzuki/dotfiles.git ~/.dotfiles
+git clone https://github.com/rjsuzuki/linux_dotfiles.git ~/.dotfiles
 source ~/.dotfiles/install.sh
 ```
 #### custom installation with git:
 ```bash
 cd $HOME
-git clone https://github.com/rjsuzuki/dotfiles.git ~/.dotfiles
+git clone https://github.com/rjsuzuki/linux_dotfiles.git ~/.dotfiles
 ```
 Modify files as needed then run:
 ```bash
