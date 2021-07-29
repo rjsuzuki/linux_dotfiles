@@ -48,7 +48,7 @@ snap whoami
 result=$?
 echo "result" $result
 
-if [ $result == 127 ]; then
+if [ $result = 127 ]; then
   echo "Will now install snap package manager"
   sudo apt install snapd
 fi
@@ -98,7 +98,7 @@ cp . "$DOTFILES_DIR/help/help.sh" $HOME
 #--------------------------------------------
 # Test
 #--------------------------------------------
-if [ $test == 1 ]; then
+if [ $test = 1 ]; then
   . "$DOTFILES_DIR/install/test.sh" 1
 fi
 
@@ -106,7 +106,7 @@ fi
 # Terminal Stuff
 #--------------------------------------------
 
-if [ $terminal == 1 ]; then
+if [ $terminal = 1 ]; then
   . "$DOTFILES_DIR/install/terminal.sh" 1
 fi
 
@@ -114,7 +114,7 @@ fi
 # Dev Tools
 #--------------------------------------------
 
-if [ $dev == 1 ]; then
+if [ $dev = 1 ]; then
   . "$DOTFILES_DIR/install/dev.sh" 1
 fi
 
@@ -122,7 +122,7 @@ fi
 # Fun Stuff
 #--------------------------------------------
 
-if [ $fun == 1 ]; then
+if [ $fun = 1 ]; then
   . "$DOTFILES_DIR/install/fun.sh" 1
 fi
 
@@ -130,7 +130,7 @@ fi
 # Sec Tools
 #--------------------------------------------
 
-if [ $kali == 1 ]; then
+if [ $kali = 1 ]; then
   . "$DOTFILES_DIR/install/kali.sh" 1
 fi
 
@@ -138,7 +138,7 @@ fi
 # System Tools
 #--------------------------------------------
 
-if [ $system == 1 ]; then
+if [ $system = 1 ]; then
   . "$DOTFILES_DIR/install/system.sh" 1
 fi
 
