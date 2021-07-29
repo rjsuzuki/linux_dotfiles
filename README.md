@@ -69,7 +69,7 @@ sudo apt install unzip
 cd $HOME
 mkdir .dotfiles
 unzip dotfiles-master.zip -d $HOME/.dotfiles
-sudo source $HOME/.dotfiles/install.sh
+sudo sh $HOME/.dotfiles/install.sh
 ```
 
 #### custom installation with downloaded zip:
@@ -82,14 +82,14 @@ unzip dotfiles-master.zip -d $HOME/.dotfiles
 Modify files as needed then run:
 ```bash
 cd $HOME
-sudo source $HOME/.dotfiles/install.sh
+sudo sh $HOME/.dotfiles/install.sh
 ```
 
 #### quick installation with git:
 ```bash
 cd $HOME
 git clone https://github.com/rjsuzuki/linux_dotfiles.git ~/.dotfiles
-source ~/.dotfiles/install.sh
+sh ~/.dotfiles/install.sh
 ```
 #### custom installation with git:
 ```bash
@@ -99,7 +99,7 @@ git clone https://github.com/rjsuzuki/linux_dotfiles.git ~/.dotfiles
 Modify files as needed then run:
 ```bash
 cd $HOME
-sudo source $HOME/.dotfiles/install.sh
+sudo sh $HOME/.dotfiles/install.sh
 ```
 
 #### If you need to start over
