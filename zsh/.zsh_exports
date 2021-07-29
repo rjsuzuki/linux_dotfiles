@@ -12,10 +12,12 @@ export ANDROID_SDK="$HOME/Android/Sdk"
 export PATH="$PATH:ANDROID_SDK/platform-tools/adb"
 
 export PATH="$PATH:$HOME/Android/android-ndk-r21e"
-export PATH="$PATH:$HOME/Android/gradle/opt/gradle/gradle-6.4.1/bin"
+export PATH="$PATH:$HOME/Android/gradle/opt/gradle/gradle-7.0.2/bin"
 
 
-export JAVA_HOME="/usr/lib/jvm/java-1.8.0-openjdk-amd64"
+#export JAVA_HOME="/usr/lib/jvm/java-1.8.0-openjdk-amd64"
+#export PATH="$PATH:$JAVA_HOME/bin"
+export JAVA_HOME="$HOME/Apps/artic-fox/android-studio/jre"
 export PATH="$PATH:$JAVA_HOME/bin"
 
 export PATH="$PATH:/snap/bin"
