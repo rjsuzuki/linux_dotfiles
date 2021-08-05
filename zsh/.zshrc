@@ -1,8 +1,8 @@
 # Setting $PATH
 # If you come from bash you might have to change your $PATH.
-echo "Starting oh-my-zsh..."
-export PATH=$HOME/bin:/usr/local/bin:$PATH
-
+echo "Setting PATH..."
+#export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$DOTFILES_DIR/bin"
 # Path to the oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 
@@ -101,3 +101,7 @@ eval `ruby.env`
 source $HOME/.zsh_exports # Always source exports first before aliases
 source $HOME/.zsh_aliases
 source $ZSH/oh-my-zsh.sh # This needs to be last in order for oh-my-zsh to be properly loaded
+
+# Set Spaceship ZSH as a prompt
+autoload -U promptinit; promptinit
+prompt spaceship
